@@ -1,11 +1,7 @@
 self: super:
 
-let
-  callPackage = super.lib.callPackageWith super;
-in
-
 {
-  riscv64-unknown-elf = callPackage ./riscv64-unknown-elf.nix {};
-  iproute2mac = callPackage ./iproute2mac.nix {};
-  patchmacho = callPackage ./patchmacho.nix {};
+  patchmacho = self.callPackage ./patchmacho.nix {};
+  riscv64-unknown-elf = self.callPackage ./riscv64-unknown-elf.nix {};
+  iproute2mac = self.callPackage ./iproute2mac.nix {};
 }
