@@ -10,7 +10,7 @@ stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [];
-  buildInputs = [ xz ];
+  buildInputs = [ ];
 
   installPhase = ''
     mkdir "$out"
