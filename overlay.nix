@@ -15,6 +15,8 @@ self: super:
       (self.python38.withPackages (
         ps: [
           self.powerline-status
+          ps.pylint
+          ps.autopep8
         ]
       ))
     ];
