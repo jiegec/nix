@@ -17,6 +17,7 @@ self: super:
           self.powerline-status
           ps.pylint
           ps.autopep8
+          ps.pyserial
         ]
       ))
     ];
