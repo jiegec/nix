@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, patchmacho, xz }:
+{ stdenv, fetchurl, xz }:
 
 stdenv.mkDerivation {
   pname = "riscv64-unknown-elf";
