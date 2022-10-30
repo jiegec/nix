@@ -9,6 +9,10 @@
 , help2man
 , libtool
 , ncurses
+, wget
+, gnum4
+, makeWrapper
+, perl
 }:
 
 stdenv.mkDerivation rec {
@@ -29,13 +33,15 @@ stdenv.mkDerivation rec {
     help2man
     libtool
     ncurses
+    wget
+    makeWrapper
   ];
 
-  buildInputs = [
-  ];
-
-  propagatedBuildInputs = [
-  ];
+  postInstall = ''
+    # add runtime dependencies to build toolchain
+    wrapProgram "$out/bin/ct-ng" \
+      --prefix PATH : ${lib.makeBinPath [ wget gnum4 which perl ]}
+  '';
 
   meta = with lib; {
     description = "A versatile (cross-)toolchain generator.";
